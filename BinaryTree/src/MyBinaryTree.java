@@ -1,68 +1,76 @@
 public class MyBinaryTree {
-    private StudentInfo root;
-    private int numInTree;
+    // attributes
+    private StudentInfo root; // the root of the tree
+    private int numInTree; // the number of students in the tree
 
+    // constructor
     public MyBinaryTree(){
         root = null;
         numInTree = 0;
     }
 
+    // getter method for the root of the tree
     public StudentInfo getRoot(){
         return root;
     }
 
-    public int getNum(){
+    // getter method for the number of students in the tree
+    public int getNumInTree(){
         return numInTree;
     }
 
+    // method to add student to the tree
     public void addToTree(StudentInfo targetNode, StudentInfo itemToAdd){
-        if (root == null){
-            root = itemToAdd;
+        if (root == null){ // if there are no students in the tree
+            root = itemToAdd; // set root to itemToAdd
             numInTree++;
         }
         else {
-            if (itemToAdd.studentNum<=targetNode.studentNum) { // go left
-                if (targetNode.left == null){
-                    targetNode.left = itemToAdd;
+            if (itemToAdd.getStudentNum()<targetNode.getStudentNum()) { // go left
+                if (targetNode.getLeft() == null){ // if there is no student to the left of the current student
+                    targetNode.setLeft(itemToAdd); // set itemToAdd as a leaf node, left of current student
                     numInTree++;
                 }
                 else{
-                    addToTree(targetNode.left, itemToAdd);
+                    addToTree(targetNode.getLeft(), itemToAdd); // recurse down the tree leftwards
                 }
             }
             else { // go right
-                if (targetNode.right == null){
-                    targetNode.right = itemToAdd;
+                if (targetNode.getRight() == null){ // if there is no student to the right of the current student
+                    targetNode.setRight(itemToAdd); // set itemToAdd as a leaf node, right of current student
                     numInTree++;
                 }
                 else{
-                    addToTree(targetNode.right, itemToAdd);
+                    addToTree(targetNode.getRight(), itemToAdd); // recurse down the tree rightwards
                 }
             }
         }
     }
 
+    // inorder traversal method
     public void inOrder(StudentInfo targetNode){
         if (targetNode != null){
-            inOrder(targetNode.left);
-            System.out.print(targetNode.studentNum + " ");
-            inOrder(targetNode.right);
+            inOrder(targetNode.getLeft());
+            System.out.println(targetNode.getStudentNum() + " " + targetNode.getFirstName());
+            inOrder(targetNode.getRight());
         }
     }
 
+    // preorder traversal method
     public void preOrder(StudentInfo targetNode){
         if (targetNode != null){
-            System.out.print(targetNode.studentNum + " ");
-            preOrder(targetNode.left);
-            preOrder(targetNode.right);
+            System.out.println(targetNode.getStudentNum() + " " + targetNode.getFirstName());
+            preOrder(targetNode.getLeft());
+            preOrder(targetNode.getRight());
         }
     }
 
+    // postorder traversal method
     public void postOrder(StudentInfo targetNode){
         if (targetNode != null){
-            postOrder(targetNode.left);
-            postOrder(targetNode.right);
-            System.out.print(targetNode.studentNum + " ");
+            postOrder(targetNode.getLeft());
+            postOrder(targetNode.getRight());
+            System.out.println(targetNode.getStudentNum() + " " + targetNode.getFirstName());
         }
     }
 

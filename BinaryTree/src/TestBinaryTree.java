@@ -1,5 +1,6 @@
 public class TestBinaryTree {
     public static void main(String[] args) {
+        // instantiating binary tree and students
         MyBinaryTree theBT = new MyBinaryTree();
         theBT.addToTree(theBT.getRoot(), new StudentInfo(7, "Adam", "Apple"));
         theBT.addToTree(theBT.getRoot(), new StudentInfo(2, "Adam", "Apple"));
@@ -12,14 +13,12 @@ public class TestBinaryTree {
         theBT.addToTree(theBT.getRoot(), new StudentInfo(16, "Adam", "Apple"));
         theBT.addToTree(theBT.getRoot(), new StudentInfo(12, "Adam", "Apple"));
 
-        System.out.print("The inorder traversal is: ");
+        // showing the various traversals
+        System.out.println("The inorder traversal is: ");
         theBT.inOrder(theBT.getRoot());
-        System.out.print('\n');
-        System.out.print("The postorder traversal is: ");
+        System.out.println("The postorder traversal is: ");
         theBT.postOrder(theBT.getRoot());
-        System.out.print('\n');
-        System.out.print("The preorder traversal is: ");
+        System.out.println("The preorder traversal is: ");
         theBT.preOrder(theBT.getRoot());
-        System.out.print('\n');
     }
 }
