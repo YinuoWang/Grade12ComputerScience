@@ -37,5 +37,4 @@ public class StudentInfo {
             studentNum = sN;
         }
     }
-
 }
