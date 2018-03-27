@@ -15,10 +15,10 @@ public class TestBinaryTree {
 
         // showing the various traversals
         System.out.println("The inorder traversal is: ");
-        theBT.inOrder(theBT.getRoot());
+        theBT.inorder(theBT.getRoot());
         System.out.println("The postorder traversal is: ");
-        theBT.postOrder(theBT.getRoot());
+        theBT.postorder(theBT.getRoot());
         System.out.println("The preorder traversal is: ");
-        theBT.preOrder(theBT.getRoot());
+        theBT.preorder(theBT.getRoot());
     }
 }

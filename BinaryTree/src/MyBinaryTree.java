@@ -48,29 +48,29 @@ public class MyBinaryTree {
     }
 
     // inorder traversal method
-    public void inOrder(StudentInfo targetNode){
+    public void inorder(StudentInfo targetNode){
         if (targetNode != null){
-            inOrder(targetNode.getLeft());
-            System.out.println(targetNode.getStudentNum() + " " + targetNode.getFirstName());
-            inOrder(targetNode.getRight());
+            inorder(targetNode.getLeft());
+            System.out.println(targetNode.getStudentNum() + " ");
+            inorder(targetNode.getRight());
         }
     }
 
     // preorder traversal method
-    public void preOrder(StudentInfo targetNode){
+    public void preorder(StudentInfo targetNode){
         if (targetNode != null){
-            System.out.println(targetNode.getStudentNum() + " " + targetNode.getFirstName());
-            preOrder(targetNode.getLeft());
-            preOrder(targetNode.getRight());
+            System.out.println(targetNode.getStudentNum() + " ");
+            preorder(targetNode.getLeft());
+            preorder(targetNode.getRight());
         }
     }
 
     // postorder traversal method
-    public void postOrder(StudentInfo targetNode){
+    public void postorder(StudentInfo targetNode){
         if (targetNode != null){
-            postOrder(targetNode.getLeft());
-            postOrder(targetNode.getRight());
-            System.out.println(targetNode.getStudentNum() + " " + targetNode.getFirstName());
+            postorder(targetNode.getLeft());
+            postorder(targetNode.getRight());
+            System.out.println(targetNode.getStudentNum() + " ");
         }
     }
 
