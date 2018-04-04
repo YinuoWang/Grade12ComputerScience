@@ -6,9 +6,15 @@ public class EmployeeInfo {
     private int workLocation;
     private double deductionRate;
 
-    public EmployeeInfo(){}
+    public EmployeeInfo(int eN){
+        employeeNum = eN;
+    }
 
     public double getDeductionRate(){
         return deductionRate;
+    }
+
+    public int getEmployeeNum(){
+        return employeeNum;
     }
 }
